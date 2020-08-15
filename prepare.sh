@@ -30,4 +30,4 @@ pull_image
 
 echo "Running in $CONTAINER_ID"
 
-create_container $@
+create_container "$@"
