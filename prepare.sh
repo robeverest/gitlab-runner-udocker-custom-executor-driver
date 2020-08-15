@@ -23,11 +23,11 @@ create_container () {
 
     # Create a container from the image given in .gitlab-ci.yml. This assumes that image is udocker
     # compatible. Many images aren't, but there is no way to check for that.
-    udocker create --name="$CONTAINER_ID" "$CUSTOM_ENV_CI_JOB_IMAGE"
+    udocker create --name="$CONTAINER_ID" $@ "$CUSTOM_ENV_CI_JOB_IMAGE"
 }
 
 pull_image
 
 echo "Running in $CONTAINER_ID"
 
-create_container
+create_container $@
